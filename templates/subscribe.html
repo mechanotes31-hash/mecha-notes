@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="overlay">
+  <div class="box" style="text-align:center; width:400px;">
+
+    <h2>💳 Pembayaran QRIS</h2>
+
+    <p>Scan QR di bawah untuk subscribe</p>
+
+    <!-- QRIS IMAGE -->
+    <img src="{{ url_for('static', filename='qris.jpeg') }}" 
+         style="width:250px; margin:20px 0; border-radius:10px;">
+
+    <h3>Rp 30.000 / bulan</h3>
+
+    <p style="color:orange; font-size:14px;">
+      Setelah pembayaran, tunggu admin approve ya 👌
+    </p>
+
+    <a href="/">
+      <button>Kembali</button>
+    </a>
+
+  </div>
+</div>

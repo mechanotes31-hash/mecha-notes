@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="topbar">
+    <h2>⚙️ Admin Dashboard</h2>
+    <a href="/"><button class="logout-btn">Kembali</button></a>
+</div>
+
+<!-- ================= USER SUBSCRIPTION ================= -->
+<div class="admin-list">
+
+    <h2>👤 User Subscription</h2>
+
+    <table>
+        <tr>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Aksi</th>
+        </tr>
+
+        {% for u in users %}
+        <tr>
+            <!-- EMAIL -->
+            <td>{{ u[1] }}</td>
+
+            <!-- STATUS -->
+            <td>
+                {% if u[2] == 'active' %}
+                    <span style="color:lightgreen;">Active</span>
+                {% elif u[2] == 'pending' %}
+                    <span style="color:orange;">Pending</span>
+                {% else %}
+                    <span style="color:red;">Inactive</span>
+                {% endif %}
+            </td>
+
+            <!-- APPROVE -->
+            <td>
+                {% if u[2] == 'pending' %}
+                <a href="/approve/{{ u[0] }}">
+                    <button class="view-btn">Approve</button>
+                </a>
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+<!-- ================= FILE MANAGEMENT ================= -->
+<div class="admin-list">
+
+    <h2>📂 Semua File</h2>
+
+    <table>
+        <tr>
+            <th>Judul</th>
+            <th>Kategori</th>
+            <th>Aksi</th>
+        </tr>
+
+        {% for file in files %}
+        <tr>
+            <td>{{ file[1] }}</td>
+            <td>{{ file[3] }}</td>
+
+            <td>
+                <a href="/preview/{{ file[2] }}">
+                    <button class="view-btn">View</button>
+                </a>
+
+                <a href="/delete/{{ file[0] }}">
+                    <button class="delete-btn">Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>

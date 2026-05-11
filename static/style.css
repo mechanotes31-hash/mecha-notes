@@ -1,0 +1,269 @@
+a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+a:visited {
+    color: white !important;
+}
+
+a:hover {
+    color: white !important;
+}
+
+.categories a {
+    text-decoration: none;
+}
+
+.category {
+    color: white !important;
+}
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* TOPBAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+/* LOGOUT */
+.logout-btn {
+    background: transparent;
+    border: 1px solid #555;
+    padding: 8px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+/* SEARCH CENTER */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.search-container input {
+    width: 500px;
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* CATEGORY CENTER */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* CATEGORY BUTTON */
+.category {
+    padding: 10px 20px;
+    background: #1c1c1c;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category:hover {
+    background: #e50914;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+/* CARD */
+.card {
+    background: #1c1c1c;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    background: #2a2a2a;
+}
+
+/* BUTTON */
+.card button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #e50914;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* OVERLAY BACKGROUND */
+.overlay {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LOGIN BOX */
+.login-box {
+    background: rgba(0,0,0,0.85);
+    padding: 50px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+/* LOGO */
+.logo {
+    color: #e50914;
+    margin-bottom: 20px;
+}
+
+/* INPUT */
+.login-box input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* BUTTON */
+.login-box button {
+    width: 100%;
+    padding: 14px;
+    background: #e50914;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.login-box button:hover {
+    background: #f6121d;
+}
+
+/* TEXT */
+.login-box p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-box a {
+    color: #bbb;
+}
+
+/* ADMIN CONTAINER */
+.admin-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+/* ADMIN BOX */
+.admin-box {
+    background: #1c1c1c;
+    padding: 40px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+/* TITLE */
+.admin-box h2 {
+    margin-bottom: 20px;
+}
+
+/* INPUT */
+.admin-box input,
+.admin-box select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+}
+
+/* BUTTON */
+.admin-box button {
+    width: 100%;
+    padding: 12px;
+    background: #e50914;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.admin-box button:hover {
+    background: #f6121d;
+}
+
+/* ADMIN TABLE */
+.admin-list {
+    padding: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background: #222;
+}
+
+tr {
+    border-bottom: 1px solid #333;
+}
+
+.view-btn {
+    background: #444;
+    padding: 8px 12px;
+    border: none;
+    color: white;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: #e50914;
+    padding: 8px 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #ff1e1e;
+}

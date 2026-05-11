@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="/static/style.css">
+<div style="text-align:center; margin-top:20px;">
+{% if role != 'admin' %}
+    {% if status == 'pending' %}
+        <div style="text-align:center; margin-top:30px;">
+            <h2 style="color:orange;">Menunggu Konfirmasi Pembayaran</h2>
+        </div>
+    {% elif expired %}
+        <div style="text-align:center; margin-top:30px;">
+            <h2 style="color:red;">Belum Subscribe</h2>
+            <a href="/subscribe"><button>Subscribe</button></a>
+        </div>
+    {% endif %}
+{% endif %}
+{% if role == 'admin' %}
+<div style="text-align:center; margin-top:20px;">
+    <a href="/admin">
+        <button style="background:orange;">Masuk Admin Panel</button>
+    </a>
+</div>
+{% endif %}
+
+{% if role != 'admin' %}
+
+    {% if status == "inactive" %}
+        <h2 style="color:red;">Belum Subscribe</h2>
+        <a href="/subscribe"><button>Subscribe</button></a>
+
+    {% elif status == "pending" %}
+        <h2 style="color:orange;">Menunggu Konfirmasi Admin</h2>
+
+    {% elif status == "active" %}
+        <h2 style="color:lightgreen;">Subscription Aktif</h2>
+    {% endif %}
+
+{% else %}
+    <h2 style="color:lightgreen;">Mode Admin</h2>
+{% endif %}
+</div>
+<!-- TOP BAR -->
+<div class="topbar">
+    <h2>📚 Mecha Notes</h2>
+
+    <div>
+        {% if role == 'admin' %}
+            <a href="/upload"><button class="logout-btn">Upload</button></a>
+            <a href="/admin"><button class="logout-btn">Admin</button></a>
+        {% endif %}
+        <a href="/logout"><button class="logout-btn">Logout</button></a>
+    </div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-container">
+    <form method="GET">
+        <input name="search" placeholder="🔍 Cari catatan..." value="{{ search }}">
+    </form>
+</div>
+
+<!-- CATEGORY -->
+<div class="categories">
+    <a href="/?category=Semua"><div class="category">Semua</div></a>
+    <a href="/?category=Catatan Kuliah"><div class="category">Catatan Kuliah</div></a>
+    <a href="/?category=Latihan Soal"><div class="category">Latihan Soal</div></a>
+</div>
+
+{% if expired %}
+
+<div style="text-align:center; margin-top:50px;">
+    <h2 style="color:red;">Akun belum subscribe</h2>
+    <a href="/subscribe"><button>Subscribe Sekarang</button></a>
+</div>
+
+{% else %}
+
+<!-- GRID -->
+{% if status == "active" or role == "admin" %}
+
+<div class="grid">
+    {% for file in files %}
+    <div class="card">
+        <a href="/preview/{{ file[1] }}">
+            {{ file[0] }}
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% else %}
+
+<div style="text-align:center; margin-top:80px;">
+    <h2 style="color:red;">🔒 Konten terkunci</h2>
+    <p>Silakan subscribe untuk membuka semua materi</p>
+
+    <a href="/subscribe">
+        <button>Subscribe Sekarang</button>
+    </a>
+</div>
+
+{% endif %}
+</div>
+{% endif %}
